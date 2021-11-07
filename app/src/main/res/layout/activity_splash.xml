@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SplashActivity"
+    android:background="@drawable/splash_background">
+
+
+    <gap.com.car.widget.CircularProgress
+        android:id="@+id/progress_circular"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/isf_logo"
+        android:layout_marginTop="50dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/manage_car"
+        android:textSize="32sp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="20dp"
+        android:textColor="@color/white"/>
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bis_car_white"
+        android:layout_above="@+id/txt_site"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/txt_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="www.gapcom.ir"
+        android:textColor="@color/white"
+        android:layout_above="@+id/waitProgress"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"/>
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/waitProgress"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/white"
+        app:cpv_indeterminate="true" />
+
+
+</RelativeLayout>

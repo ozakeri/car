@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "246769632980",
+    "firebase_url": "https://bis-car-b13c9.firebaseio.com",
+    "project_id": "bis-car-b13c9",
+    "storage_bucket": "bis-car-b13c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246769632980:android:25deb51377896010ab9d41",
+        "android_client_info": {
+          "package_name": "gap.com.car"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPhloHtWAZCAB30q603-S9lDHYOl-LSmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

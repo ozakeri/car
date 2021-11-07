@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MyActivity">
+
+    <group
+        android:orderInCategory="101">
+        <item
+            android:id="@+id/action_today"
+            android:orderInCategory="100"
+            android:title="@string/action_today_fa"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/action_week"
+            android:orderInCategory="100"
+            android:title="@string/action_week_fa"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/action_month"
+            android:orderInCategory="100"
+            android:title="@string/action_month_fa"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

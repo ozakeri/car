@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_rect1"
+        android:layout_margin="10dp">
+
+       <LinearLayout
+           android:id="@+id/layout_add"
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:orientation="horizontal"
+           android:layout_alignParentRight="true"
+           android:gravity="center"
+           android:layout_margin="10dp">
+
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:background="@drawable/add_icon" />
+
+       </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_close"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/close_icon"/>
+
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_add" />
+
+
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:id="@+id/waitProgress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            app:cpv_animAutostart="true"
+            app:cpv_color="@color/colorPrimary"
+            app:cpv_indeterminate="true"
+            android:visibility="gone"/>
+
+        <gap.com.car.widget.CustomTextViewTitle
+            android:id="@+id/txt_null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:text="سطری وجود ندارد"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

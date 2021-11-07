@@ -1,0 +1,412 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">BisCar</string>
+    <string name="label_login_driverCode"> کد پرسنلی خود را وارد کنید </string>
+    <string name="label_login_driverCode1"> کد پرسنلی </string>
+    <string name="label_login_phoneNumber">شماره موبایل</string>
+    <string name="label_login_activationCode">کد فعالسازی را وارد کنید</string>
+    <string name="label_login_username">نام کاربری</string>
+    <string name="label_login_password">گذرواژه</string>
+    <string name="label_login_password_confirm">تعریف مجدد گذرواژه</string>
+    <string name="label_login_createAccount1">حساب کاربری ندارید؟</string>
+    <string name="label_login_forgetPassword1">گذرواژه خود را فراموش کرده اید؟</string>
+    <string name="label_login_forgetPassword2">بازیابی نام کاربری</string>
+    <string name="label_autoLogin_localPass">گذرواژه محلی خود را وارد کنید</string>
+    <string name="label_login_button_ok">تایید </string>
+    <string name="label_login_button_input">ورود </string>
+    <string name="label_login_editText_warning">اطلاعات را کامل وارد کنید </string>
+    <string name="label_comment_editText_warning">متن گزارش را وارد کنید </string>
+    <string name="label_login_editText_ok">اطلاعات ثبت شد </string>
+    <string name="label_login_clickOk_warning">اطلاعات وارد شده اشتباه می باشد </string>
+    <string name="label_login_active_localPass">فعال کردن گذرواژه محلی </string>
+    <string name="label_login_change_localPass">تغییر گذرواژه محلی</string>
+    <string name="comment">لطفا تایپ کنید...</string>
+    <string name="label_login_active_description">در صورت تمایل برای فعال کردن گذرواژه محلی خود لطفا بر روی این آیتم ضربه بزنید</string>
+
+    <string name="ok_btn">تائید</string>
+    <string name="cancel_btn">انصراف</string>
+    <string name="today">امروز</string>
+    <string name="date_placeholder">"%s، %d %s"</string>
+
+    <string name="label_tabLayout_tab3">رخداد ها </string>
+    <string name="label_tabLayout_tab2">نیمراه های طی شده </string>
+    <string name="label_tabLayout_tab1">تخلفات </string>
+
+    <string name="label_tabLayout_notification">اعلانات </string>
+    <string name="label_tabLayout_news">اخبار </string>
+
+
+    <string name="label_home_detail">مجموع کارکرد ماهانه </string>
+    <string name="label_daily_detail">ارزیابی پارامترهای حقوق </string>
+    <string name="label_home_detail_workingDayCount">تعداد روز کارکرد </string>
+    <string name="label_home_detail_timeOffDay">تعداد روز مرخصی </string>
+    <string name="label_home_detail_dutyWork">کل کارکرد </string>
+    <string name="label_home_detail_overtimeWorkReal">کل اضافه کار </string>
+    <string name="label_home_detail_doubleWork">دوبل </string>
+    <string name="label_home_detail_absentDay">تعداد روز غیبت </string>
+    <string name="label_home_detail_fractionWork">کسر کار </string>
+    <string name="label_home_detail_overtimeWork">اضافه کار قابل پرداخت </string>
+    <string name="label_home_detail_nightWork">شب کاری </string>
+
+    <string name="label_carInvoiceMonthlyVO_halfPathNO"> تعداد نیمراه : </string>
+    <string name="label_carInvoiceMonthlyVO_timeMinInLine">مدت حضور در خط : </string>
+    <string name="label_carInvoiceMonthlyVO_kmInLineFV">کیلومتر طی شده در خط :</string>
+    <string name="label_carInvoiceMonthlyVO_fuelValue">مقدار سوخت : </string>
+    <string name="label_carInvoiceMonthlyVO_countEtPass">تعداد تراکنش : </string>
+    <string name="label_carInvoiceMonthlyVO_priceEtPass"> مبلغ تراکنش : </string>
+    <string name="label_carInvoiceMonthlyVO_etCardNo">مجموع تراکنش : </string>
+    <string name="label_carInvoiceMonthlyVO_priceEtSumFVetCardNo">درآمد تراکنش : </string>
+    <string name="label_carInvoiceMonthlyVO_dayActNo">تعداد روز شاغل : </string>
+    <string name="label_carInvoiceMonthlyVO_priceSubDF_2">مبلغ یارانه : </string>
+    <string name="label_carInvoiceMonthlyVO_priceIncomeFV">مبلغ درآمد دریافتی : </string>
+    <string name="label_carInvoiceMonthlyVO_priceIncomeEstimateFV">مبلغ درآمد برآوردی ماهانه اتوبوس : </string>
+
+    <string name="label_daily_detail_dailyWorkTypeEn">وضعیت کارکرد:</string>
+    <string name="label_daily_detail_etCardDataVOList_sumCountEt">تعداد تراکنش:</string>
+    <string name="label_daily_detail_startDate">تاریخ شروع کار:</string>
+    <string name="label_daily_detail_startHour">ساعت شروع:</string>
+    <string name="label_daily_detail_dutyWork">کل کارکرد:</string>
+    <string name="label_daily_detail_fractionPerform">کسر کار عملکردی: </string>
+    <string name="label_daily_detail_overtimeWorkReal">کل اضافه کار: </string>
+    <string name="label_daily_detail_timeInLine">کارکرد مفید در خط:</string>
+    <string name="label_daily_detail_halfPathNoGps">تعداد نیمراه:</string>
+    <string name="label_daily_detail_endDate">تاریخ پایان کار: </string>
+    <string name="label_daily_detail_endHour">ساعت پایان: </string>
+    <string name="label_daily_detail_fractionWork">کسر کار:</string>
+    <string name="label_daily_detail_nightWork">شب کاری:</string>
+
+    <string name="label_daily_companyProfit">بهره بردار :</string>
+    <string name="label_daily_nameFamily"> نام و نام خانوادگی :</string>
+    <string name="label_daily_shift">شیفت :</string>
+    <string name="label_daily_carUsage"> کاربری :</string>
+    <string name="label_daily_tariff">وضعیت تعرفه :</string>
+    <string name="label_daily_definedTime"> برنامه کاری تعریف شده : </string>
+    <string name="label_daily_date">تاریخ :</string>
+    <string name="label_daily_driverJobTypeEn">نوع شغل :</string>
+    <string name="label_daily_car">خودرو :</string>
+
+
+    <string name="label_jalaliCalendar_WorkingDay"> شاغل</string>
+    <string name="label_jalaliCalendar_HolidayDay"> روز تعطیل</string>
+    <string name="label_jalaliCalendar_TimeOFFEntitlement">مرخصی</string>
+    <string name="label_jalaliCalendar_TimeOFFWithoutRights">مرخصی بدون حقوق  </string>
+    <string name="label_jalaliCalendar_TimeOFFSick">مرخصی استعلاجی </string>
+    <string name="label_jalaliCalendar_Absence">غیبت </string>
+    <string name="label_jalaliCalendar_Duty">ماموریت </string>
+    <string name="label_jalaliCalendar_enterPrim">ثبت اولیه </string>
+    <string name="label_jalaliCalendar_absent">عدم مراجعه</string>
+
+
+    <string name="label_shiftType_Morning">صبح </string>
+    <string name="label_shiftType_Afternoon">عصر </string>
+    <string name="label_shiftType_Night">شب </string>
+    <string name="label_shiftType_Other">سایر </string>
+    <string name="label_shiftType_General">کلی </string>
+    <string name="label_shiftType_MidDay">میان روزی </string>
+
+    <string name="label_DrivingLicTypeEn1">پایه یک </string>
+    <string name="label_DrivingLicTypeEn2">پایه دو </string>
+    <string name="label_DrivingLicTypeEn3">کارت شهری </string>
+    <string name="label_DrivingLicTypeEn4">گواهی موقت </string>
+    <string name="label_DrivingLicTypeEn5">موتورسیکلت </string>
+    <string name="label_DrivingLicTypeEn6">پایه یک ویژه </string>
+    <string name="label_DrivingLicTypeEn7">پایه سه </string>
+
+    <string name="label_item_list_fragment1_name">نام </string>
+    <string name="label_item_list_fragment1_date">تاریخ </string>
+    <string name="label_item_list_fragment1_Hour">ساعت </string>
+    <string name="label_item_list_fragment1_locate">محل </string>
+    H
+    <string name="label_item_list_eventPositionEn0">توقفگاه </string>
+    <string name="label_item_list_eventPositionEn1">مبدا خط </string>
+    <string name="label_item_list_eventPositionEn2">مقصد خط </string>
+
+    <string name="myFormatString">%s</string>
+    <string name="manage_driver">بـر نـا مه مـد یر یت\nکـارکـرد رانندگـان دولـتـی</string>
+    <string name="manage_car">بـر نـا مه مـد یر یت\nکـارکـرد خــودرو</string>
+
+    <string name="label_item_list_fragment2_car">خودرو </string>
+    <string name="label_item_list_fragment2_pathType">نوع مسیر </string>
+    <string name="label_item_list_fragment2_time">مدت </string>
+    <string name="label_item_list_fragment2_startDate">ساعت شروع </string>
+    <string name="label_item_list_fragment2_endDate">ساعت پایان </string>
+    <string name="label_item_list_fragment2_linePathNo">تعداد نیمراه</string>
+
+    <string name="pathType_0">مسیر رفت </string>
+    <string name="pathType_1">مسیر برگشت </string>
+
+
+    <string name="label_ProcessStatus_State1">منتظر ورود </string>
+    <string name="label_ProcessStatus_State4">مرخصی </string>
+    <string name="label_ProcessStatus_State5">شاغل </string>
+    <string name="label_ProcessStatus_State6">عدم مراجعه </string>
+    <string name="label_ProcessStatus_State7">فاقد برنامه </string>
+    <string name="label_ProcessStatus_State8">پایان کار زود هنگام </string>
+    <string name="label_ProcessStatus_State9">پایان کار </string>
+    <string name="label_ProcessStatus_State11">عدم حضور- روز تعطیل </string>
+    <string name="label_ProcessStatus_State12">عدم ثبت تعرفه </string>
+    <string name="label_ProcessStatus_State50">غیبت </string>
+    <string name="label_ProcessStatus_EmployeeDuty">ماموریت </string>
+
+
+    <string name="message_toast_recyclerView_click">فاقد اطلاعات</string>
+    <string name="message_toast_invalidDateTime">تاریخ دستگاه نامعتبر است</string>
+
+
+    <string name="label_driverJobTypeEn_DetermineCarForDriver">راننده با خودرو مشخص </string>
+    <string name="label_driverJobTypeEn_RotatoryDriverInLine">راننده گردشی درخط </string>
+    <string name="label_driverJobTypeEn_DriverInParking">راننده مستقر در توقفگاه </string>
+    <string name="label_driverJobTypeEn_RescuerSOS">راننده امداد </string>
+    <string name="label_driverJobTypeEn_AssistantRescuerSOS">کمک راننده امداد </string>
+    <string name="label_driverJobTypeEn_WorkOnContract">اشتغال براساس قرارداد </string>
+
+
+    <string name="error_unknown">خطا در عملیات! لطفا دوباره تلاش کنید.</string>
+    <string name="error_noConnection">لطفا اتصال خود را به اینترنت بررسی کنید</string>
+    <string name="success_login">شما با موفقیت وارد شدید.</string>
+    <string name="success_enter_verification_code">کد اعتبارسنجی برای شما ارسال شد.</string>
+    <string name="success_comment_sent">درخواست شما با موفقیت ثبت شد</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_photos">Photos</string>
+    <string name="nav_movies">Movies</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="exit_confirm">جهت خروج بار دیگر کلید بازگشت را بفشارید.</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Photos</item>
+        <item>Movies</item>
+        <item>Notifications</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string-array name="label_spinner">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Year</item>
+    </string-array>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="current_date">June, 2016</string>
+    <string name="add_event">ADD CALENDAR EVENT</string>
+    <string name="label_miladi_p7">SUN</string>
+    <string name="label_miladi_p6">MON</string>
+    <string name="label_miladi_p5">TUE</string>
+    <string name="label_miladi_p4">WED</string>
+    <string name="label_miladi_p3">THU</string>
+    <string name="label_miladi_p2">FRI</string>
+    <string name="label_miladi_p1">SAT</string>
+
+    <string name="label_persian_p6">پنجشنبه</string>
+    <string name="label_persian_p5">چهارشنبه</string>
+    <string name="label_persian_p4">سه شنبه</string>
+    <string name="label_persian_p3">دوشنبه</string>
+    <string name="label_persian_p2">یکشنبه</string>
+    <string name="label_persian_p1">شنبه</string>
+    <string name="label_persian_p7">جمعه</string>
+
+    <string name="label_year">سال</string>
+    <string name="label_and">و</string>
+    <string name="label_month">ماه</string>
+    <string name="label_week">هفته</string>
+    <string name="label_day">روز</string>
+    <string name="label_hour">ساعت</string>
+    <string name="label_minute">دقیقه</string>
+    <string name="label_second">ثانیه</string>
+    <string name="label_millisecond">هزارم ثانیه</string>
+
+    <string name="customize">Customize</string>
+    <string name="show_dialog">Show Dialog</string>
+
+    <string name="event_title_txt">عنوان</string>
+    <string name="event_title_edt_hint">عنوان</string>
+
+    <string name="label_ok">تایید</string>
+    <string name="label_cancel">لغو</string>
+    <string name="label_understand">فهمیدم</string>
+    <string name="label_close">بستن</string>
+
+    <string name="dayOfWeek_Sat">شنبه</string>
+    <string name="dayOfWeek_Sun">یکشنبه</string>
+    <string name="dayOfWeek_Mon">دوشنبه</string>
+
+    <string name="label_requestMorkhasi">درخواست مرخصی</string>
+    <string name="label_sendReport">ارسال گزارش</string>
+
+    <string name="event_fromDate_txt">از تاریخ </string>
+    <string name="event_toDate_txt">تا تاریخ </string>
+    <string name="event_date_edt_hint">انتخاب تاریخ</string>
+    <string name="event_time_edt_hint">انتخاب زمان</string>
+    <string name="event_showDateTime">افزودن یادآور</string>
+
+    <string name="event_description_txt">توضیحات</string>
+    <string name="event_description_edt_hint">توضیحات</string>
+
+
+    <string name="action_today">Today</string>
+    <string name="action_day_view">Day view</string>
+    <string name="action_three_day_view">3 day view</string>
+    <string name="action_week_view">Week view</string>
+
+    <string name="action_month_fa">ماهانه</string>
+    <string name="action_week_fa">هفتگی</string>
+    <string name="action_today_fa">روزانه</string>
+    <string name="context_menu_item">جزییات</string>
+    <string name="spinnerNoSelected">انتخاب کنید...</string>
+    <string name="select_startWeekDay">شروع هفته</string>
+    <string name="select_type_report">لطفا یکی از موارد زیر را انتخاب کنید</string>
+    <string name="label_titleDialog_guideWelcome">خوش آمدید</string>
+    <string name="label_description_guideWelcome">در صورت تمایل می توانید گذرواژه محلی خود را فعال کنید. </string>
+    <string name="label_createLocalPass">فعال کردن گذرواژه محلی</string>
+    <string name="label_textLocalPassword"> گذرواژه محلی</string>
+    <string name="label_textLocalPasswordConfirm">تکرار گذرواژه محلی</string>
+    <string name="label_checkBoxLocalPassword">نمایش کاراکتر ها</string>
+
+    <string name="action_selectToday">امروز</string>
+    <string name="action_selectCustom">برو به</string>
+
+
+    <string name="report_count">تعداد نتایج جستجو : </string>
+    <string name="report_title">ارسال گزارش</string>
+    <string name="report_name">نام گزارش</string>
+    <string name="report_date">تاریخ </string>
+
+    <string name="label_leave_list_type">نوع </string>
+    <string name="label_leave_list_typeReq">نوع درخواست </string>
+    <string name="label_leave_list_from">از تاریخ </string>
+    <string name="label_leave_list_to">تا تاریخ </string>
+
+
+    <!-- Pattern for the v1 month and year string (localised) -->
+    <string name="mdtp_date_v1_monthyear">MMMM yyyy</string>
+
+    <!-- Label for button to confirm chosen date or time [CHAR LIMIT=30] -->
+    <string name="mdtp_done_label">Done</string>
+    <string name="mdtp_ok">@android:string/ok</string>
+    <string name="mdtp_cancel">@android:string/cancel</string>
+    <!--
+         Content description for the hour selector in the time picker, which displays
+         selectable hours of the day along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <string name="mdtp_hour_picker_description">Hours circular slider</string>
+    <!--
+         Content description for the minute selector in the time picker, which displays
+         selectable five-minute intervals along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <string name="mdtp_minute_picker_description">Minutes circular slider</string>
+    <!--
+         Content description for the second selector in the time picker, which displays
+         selectable five-second intervals along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <string name="mdtp_second_picker_description">Seconds circular slider</string>
+    <!-- Accessibility announcement for hour circular picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_hours">Select hours</string>
+    <!-- Accessibility announcement for minute circular picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_minutes">Select minutes</string>
+    <!-- Accessibility announcement for second circular picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_seconds">Select seconds</string>
+
+    <!--
+        Content description for the month and day selector in the date picker, which displays
+        a selectable grid of days laid out by month.
+        [CHAR LIMIT=50]
+     -->
+    <string name="mdtp_day_picker_description">Month grid of days</string>
+    <!--
+        Content description for the year selector in the date picker, which displays
+        a scrolling, vertical list of years.
+        [CHAR LIMIT=50]
+     -->
+    <string name="mdtp_year_picker_description">Year list</string>
+    <!-- Accessibility announcement for the day picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_day">Select month and day</string>
+    <!-- Accessibility announcement for the year picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_year">Select year</string>
+    <!-- Accessibility description for the item that is currently selected. -->
+    <string name="mdtp_item_is_selected"><xliff:g example="2013" id="item">%1$s</xliff:g> selected</string>
+    <!-- Accessibility announcement when a number that had been typed in is deleted [CHAR_LIMIT=NONE] -->
+    <string name="mdtp_deleted_key"><xliff:g example="4" id="key">%1$s</xliff:g> deleted</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_time_placeholder" translatable="false">--</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_time_separator" translatable="false">:</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_radial_numbers_typeface" translatable="false">sans-serif</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_sans_serif" translatable="false">sans-serif</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_day_of_week_label_typeface" translatable="false">sans-serif</string>
+
+    <string name="title_activity_main">DateTimePicker Example</string>
+    <string name="selected_time">The time you picked will be shown here.</string>
+    <string name="selected_date">The date you picked will be shown here.</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="mode_24_hours">Use 24 hour mode</string>
+    <string name="mode_dark_time">Use dark theme</string>
+    <string name="mode_dark_date">Use dark theme</string>
+    <string name="mode_custom_accent">Use custom accent</string>
+    <string name="vibrate_time">Vibrate on touch</string>
+    <string name="vibrate_date">Vibrate on touch</string>
+    <string name="dismiss_time">Dismiss on pause (eg: orientation change)</string>
+    <string name="dismiss_date">Dismiss on pause (eg: orientation change)</string>
+    <string name="title_time">Show a title</string>
+    <string name="title_date">Show a title</string>
+    <string name="show_year_first">Show the year picker first</string>
+    <string name="enable_seconds">Show seconds picker</string>
+    <string name="limit_times">Limit selectable times</string>
+    <string name="limit_dates">Limit selectable dates</string>
+    <string name="highlight_dates">Highlight certain dates</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">بعدی</string>
+    <string name="skip">رد کردن</string>
+    <string name="start">ورود</string>
+    <string name="slide_1_title"> تحلیل، طراحی و پیاده سازی نرم افزارهای سفارش مشتری </string>
+    <string name="slide_1_desc">My passion for cycling never that much amazing before!</string>
+    <string name="slide_2_title"> شرکت‌های اتوبوسرانی ... </string>
+    <string name="slide_2_desc">I love long drive bike ride with my friends!</string>
+    <string name="slide_3_title">سامانه یکپارچه اتوبوسرانی (BIS) به منظور یکپارچه ‌سازی و مکانیزه نمودن فرآیندهای عملیاتی شرکت‌های اتوبوسرانی ...</string>
+    <string name="slide_3_desc">I can spend hours in swimmng pool with some food!</string>
+    <string name="slide_4_title">تجزیه و تحلیل سیستم و پیاده سازی نرم افزار تحت وب مطابق با نیاز مشتری...</string>
+    <string name="slide_4_desc">Wonder thunder ride in rowing in river always amazing!</string>
+    <string name="welcomescreen"> Welcome to Home Screen</string>
+    <string name="about"> اپلیکیشن BIS خدمتی نوین در صنعت حمل و نقل عمومی است که توسط شرکت گارنوپرگاس و با همکاری سازمان اتوبوسرانی جهت تسهیل در امورکاری راهبران دولتی طراحی وعرضه شده است. ما بصورت پیوسته در حال بهبود امکانات فعلی و توسعه امکانات جدید به منظور ایجاد شرایط مطلوب برای کاربران نرم افزار BIS هستیم. به همین منظور دریافت بازخورد از امکانات و بخش های مختلف نرم افزار می تواند به ما در این مسیر کمک فراوانی کند تا بتوانیم همواره تجربه دلنشینی را برای شما فراهم کنیم.</string>
+
+
+    <string name="json"> json = {"device":{"deviceName":"Asus K016","imei":"a94f32c175b49d7","macAddress":"AC:9E:17:DA:44:B6","osName":"Android","osVersion":"4.4.2"},"documentPassword":"GAP!driver@9707","documentUsername":"driver","version":"1.0","driverCode":"50394"}
+</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="notification_add_to_cart_button">Like</string>
+    <string name="group_name">Group 1</string>
+    <string name="notifications_admin_channel_name">Global channel</string>
+    <string name="notifications_admin_channel_description">Notifications sent from the app admin</string>
+    <string name="my_default_notification_channel">my_default_notification_channel</string>
+
+</resources>

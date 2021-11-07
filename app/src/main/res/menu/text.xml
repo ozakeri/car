@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.testjson.MainActivity" >
+
+    <item
+        android:id="@+id/copy"
+        android:icon="@drawable/bg_circle"
+        android:orderInCategory="1"
+        android:showAsAction="always">
+        
+    </item>
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/bg_circle"
+        android:orderInCategory="1"
+        android:showAsAction="always">
+        
+    </item>
+</menu>

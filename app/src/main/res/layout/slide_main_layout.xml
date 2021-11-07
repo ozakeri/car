@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:gravity="bottom"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+  <Button
+        android:id="@+id/show1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="150dp"   
+        android:background="@drawable/arrow_close"/>
+  
+
+		<selva.sliding.Sliding
+			android:id="@+id/sliding1"
+			android:orientation="vertical"
+			android:layout_marginLeft="120dp"   
+			android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		   
+			android:gravity="left"
+			android:padding="1px"
+			android:background="#ffffff">
+				<CheckBox android:id="@+id/check1"
+						android:layout_width="wrap_content"
+						android:textColor="#FFFFFF"
+						android:layout_height="wrap_content" 
+						android:text="Option1" />
+				<CheckBox android:id="@+id/check2"
+						android:layout_width="wrap_content"
+						android:textColor="#FFFFFF"
+						android:layout_height="wrap_content"
+						 android:text="Option2" />
+				<CheckBox android:id="@+id/check3"
+						android:textColor="#FFFFFF"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						 android:text="Option3" />
+		</selva.sliding.Sliding>
+	 
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"
+        android:paddingBottom="40dp"
+        android:background="@drawable/background_rect1">
+
+
+
+        <gap.com.car.widget.BSpinnerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/comment_spinner" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/close_icon"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/comment_spinner"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_comment_edittext"
+            android:gravity="right"
+            android:padding="10dp"
+            android:textColor="@color/mdtp_transparent_black"
+            android:textColorHint="@color/iron"
+            android:id="@+id/comment"/>
+
+        <gap.com.car.widget.BTextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_send"
+            android:layout_below="@+id/comment"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/background_button"
+            android:textColor="@android:color/white"
+            android:text="ارسال"/>
+
+
+    </RelativeLayout>
+
+
+
+    <gap.com.car.widget.CircularProgress
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/progressbar"
+        android:layout_centerHorizontal="true"
+        app:circular_progress_color="@android:color/white"
+        android:layout_alignTop="@+id/ok"
+        android:visibility="gone"/>
+</RelativeLayout>

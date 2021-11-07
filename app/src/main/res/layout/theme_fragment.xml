@@ -1,0 +1,177 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <!-- <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp">
+
+
+                <gap.com.car.widget.CustomTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_alignParentRight="true"
+                    android:text="اندازه قلم"/>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/title"
+                    android:background="@color/aluminum"/>
+
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekbar"
+                    android:background="@null"
+                    android:layout_marginRight="30dp"
+                    android:progress="1"
+                    android:max="4"
+                    android:layout_marginTop="10dp"
+                    android:thumb="@drawable/background_circle1"
+                    android:progressDrawable="@drawable/seekbar"
+                    android:layout_marginLeft="30dp"
+                    android:layout_below="@+id/view"
+                    android:layout_centerHorizontal="true"/>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="50dp"
+                    android:layout_below="@+id/seekbar">
+
+                    <gap.com.car.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="کوچک"/>
+
+                    <gap.com.car.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="بزرگ"/>
+
+                </RelativeLayout>
+
+
+                <gap.com.car.widget.CustomTextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/relativeLayout1"
+                    android:text="تنظیمات اعلان"/>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/title2"
+                    android:background="@color/aluminum"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_voice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/bs_header_text"
+                    android:layout_below="@+id/view1"
+                    android:gravity="center_vertical">
+
+                    <gap.com.car.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="18sp"
+                        android:text="صدا"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_voice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="15dp"
+                        android:theme="@style/MySwitch" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_vibration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/bs_header_text"
+                    android:layout_below="@+id/layout_voice"
+                    android:gravity="center_vertical">
+
+                    <gap.com.car.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="18sp"
+                        android:text="ویبره"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_vibration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="15dp"
+                        android:theme="@style/MySwitch" />
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="30dp"
+                    android:background="@drawable/button_corner"
+                    android:text="ذخیره"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+      <!--  </ScrollView>-->
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

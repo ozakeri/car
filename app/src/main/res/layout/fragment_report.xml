@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ReportFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/selected_reportTypeEN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/reportTypeOther"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="30dp"
+                android:text="سایر"
+                android:theme="@style/MyRadioButtonReport" />
+
+            <RadioButton
+                android:id="@+id/reportTypeStation"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="15dp"
+                android:text="ایستگاه"
+                android:theme="@style/MyRadioButtonReport" />
+
+            <RadioButton
+                android:id="@+id/reportTypeLine"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="15dp"
+                android:text="خط"
+                android:checked="true"
+                android:theme="@style/MyRadioButtonReport" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/code_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/selected_reportTypeEN"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/textview_report_style"
+            android:gravity="center"
+            android:hint="کد را وارد کنید"
+            android:padding="5dp"
+            android:layout_gravity="right"
+            android:textColor="@color/black"
+            android:textColorHint="@color/mdtp_done_disabled_dark"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/dec_ET"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/code_ET"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/textview_report_style"
+            android:gravity="right"
+            android:hint="متن گزارش"
+            android:maxLines="10"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/mdtp_done_disabled_dark"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:background="@drawable/button_corner"
+            android:text="ثبت"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</FrameLayout>

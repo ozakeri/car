@@ -1,0 +1,164 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <!--       <ScrollView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content">-->
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:scrollbars="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_selectedDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:background="@drawable/textview_report_style"
+                        android:layout_margin="10dp"
+                        android:padding="5dp"
+                        android:visibility="gone"/>
+
+                    <TableLayout
+                        android:id="@+id/rl_DayWeeK_Main"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:padding="2dp"
+                        android:layout_below="@+id/txt_selectedDate"
+                        android:background="@color/light_green"
+                        android:gravity="center_vertical"
+                        android:stretchColumns="*">
+
+                        <TableRow>
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/white" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/white" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/white" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/white" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/white" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:textColor="@color/white" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_p1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/white" />
+                        </TableRow>
+                    </TableLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/rl_DayWeeK_Main"
+                        android:background="@color/white" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/rl_DayWeeK_Main"
+                        android:layout_marginBottom="40dp"
+                        android:numColumns="7" />
+
+                    <gap.com.car.widget.CircularProgress
+                        android:id="@+id/progressbar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+                <!--</ScrollView>-->
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_progress"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/persistent_bottomsheet_monthly"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

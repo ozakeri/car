@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rect1"
+        android:paddingBottom="40dp">
+
+        <RelativeLayout
+            android:id="@+id/layout_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_close"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="15dp"
+                android:background="@drawable/close_icon" />
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/layout_close"
+            android:layout_margin="3dp"
+            android:background="@drawable/border_comment_edittext"
+            android:gravity="right"
+            android:padding="3dp"
+            android:textColor="@color/mdtp_transparent_black"
+            android:textColorHint="@color/iron" />
+
+        <gap.com.car.widget.BTextView
+            android:id="@+id/btn_send"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/comment"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/background_button"
+            android:gravity="center"
+            android:text="ثبت"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/waitProgress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/colorPrimary"
+        app:cpv_indeterminate="true"
+        android:visibility="gone"/>
+</RelativeLayout>

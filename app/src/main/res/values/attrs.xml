@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WeekView">
+        <attr name="firstDayOfWeek" format="enum">
+            <enum name="یکشنبه" value="1"/>
+            <enum name="دوشنبه" value="2"/>
+            <enum name="سهشنبه" value="3"/>
+            <enum name="چهارشنبه" value="4"/>
+            <enum name="پنجشنبه" value="5"/>
+            <enum name="جمعه" value="6"/>
+            <enum name="شنبه" value="7"/>
+        </attr>
+        <attr name="hourHeight" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="eventTextSize" format="dimension"/>
+        <attr name="headerColumnPadding" format="dimension"/>
+        <attr name="headerRowPadding" format="dimension"/>
+        <attr name="columnGap" format="dimension"/>
+        <attr name="headerColumnTextColor" format="color"/>
+        <attr name="noOfVisibleDays" format="integer"/>
+        <attr name="headerRowBackgroundColor" format="color"/>
+        <attr name="dayBackgroundColor" format="color"/>
+        <attr name="hourSeparatorColor" format="color"/>
+        <attr name="todayBackgroundColor" format="color"/>
+        <attr name="todayHeaderTextColor" format="color"/>
+        <attr name="hourSeparatorHeight" format="dimension"/>
+        <attr name="eventTextColor" format="color"/>
+        <attr name="eventPadding" format="dimension"/>
+        <attr name="minHourHeight" format="dimension"/>
+        <attr name="maxHourHeight" format="dimension"/>
+        <attr name="headerColumnBackground" format="color"/>
+        <attr name="dayNameLength" format="enum">
+            <enum name="length_short" value="1"/>
+            <enum name="length_long" value="2"/>
+        </attr>
+        <attr name="overlappingEventGap" format="dimension"/>
+        <attr name="eventMarginVertical" format="dimension"/>
+        <attr name="xScrollingSpeed" format="float"/>
+
+        <!--***********************************************************************-->
+    <attr name="newEventColor" format="color"/>
+    <attr name="newEventId" format="integer"/>
+    <!--    <attr name="newEventTextColor" format="color"/>
+        <attr name="newEventText" format="string"/> -->
+    <attr name="newEventIconResource" format="integer"/>
+    <attr name="newEventLengthInMinutes" format="integer"/>
+    <attr name="newEventTimeResolutionInMinutes" format="integer"/>
+    <attr name="eventCornerRadius" format="dimension"/>
+    <attr name="showDistinctPastFutureColor" format="boolean"/>
+    <attr name="showDistinctWeekendColor" format="boolean"/>
+    <attr name="futureBackgroundColor" format="color"/>
+    <attr name="pastBackgroundColor" format="color"/>
+    <attr name="futureWeekendBackgroundColor" format="color"/>
+    <attr name="pastWeekendBackgroundColor" format="color"/>
+    <attr name="showNowLine" format="boolean"/>
+    <attr name="nowLineColor" format="color"/>
+    <attr name="nowLineThickness" format="dimension"/>
+    <attr name="horizontalFlingEnabled" format="boolean"/>
+    <attr name="verticalFlingEnabled" format="boolean"/>
+    <attr name="allDayEventHeight" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="PersianDatePicker">
+        <attr name="minYear" format="integer" />
+        <attr name="maxYear" format="integer" />
+        <attr name="selectedYear" format="integer" />
+        <attr name="selectedMonth" format="integer" />
+        <attr name="selectedDay" format="integer" />
+        <attr name="displayMonthNames" format="boolean" />
+        <attr name="yearRange" format="integer" />
+        <attr name="displayDescription" format="boolean" />
+        <attr name="timezone" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CircularProgress">
+        <attr name="circular_progress_color" format="color"/>
+        <attr name="circular_progress_size" format="enum">
+            <enum name="Small" value="0"/>
+            <enum name="Normal" value="1"/>
+            <enum name="Large" value="2"/>
+        </attr>
+        <attr name="circular_progress_border_width" format="dimension"/>
+        <attr name="circular_progress_indeterminate" format="boolean"/>
+        <attr name="circular_progress_max" format="integer"/>
+        <attr name="circular_progress_duration" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+</resources>

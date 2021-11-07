@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/back"
+    android:paddingBottom="10dp"
+    android:background="@drawable/background_rect1">
+
+        <RelativeLayout
+            android:id="@+id/layout_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_close"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/close_icon"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_margin="3dp"
+            android:padding="3dp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/layout_close"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="آیا این رکورد حذف شود ؟ "/>
+
+        <gap.com.car.widget.BTextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:id="@+id/btn_yes"
+            android:layout_below="@+id/txt_title"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:background="@drawable/background_button"
+            android:textColor="@android:color/white"
+            android:layout_alignParentRight="true"
+            android:text="بلی"/>
+
+        <gap.com.car.widget.BTextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:id="@+id/btn_no"
+            android:layout_below="@+id/txt_title"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:background="@drawable/background_button"
+            android:textColor="@android:color/white"
+            android:layout_alignParentLeft="true"
+            android:text="خیر"/>
+</RelativeLayout>

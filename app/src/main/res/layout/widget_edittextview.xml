@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/text_input"
+        android:layout_marginTop="5dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_input"
+        android:textColorHint="@android:color/black"
+        app:passwordToggleEnabled="false"
+        android:gravity="right">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edittext"
+            android:layout_toRightOf="@+id/imageView9"
+            android:layout_marginLeft="15dp"
+            android:singleLine="true"
+            android:maxLength="50"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:paddingRight="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="right" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

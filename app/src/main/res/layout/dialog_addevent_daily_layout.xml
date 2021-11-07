@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/done_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/lightgray"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:onClick="onClickBtnDone">
+
+                    <TextView
+                        android:id="@+id/txt_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_ok" />
+
+                    <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_toRightOf="@+id/txt_ok"
+                        android:background="@mipmap/done" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cancel_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/lightgray"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:onClick="onClickBtnCancel">
+
+                    <TextView
+                        android:id="@+id/txt_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_cancel" />
+
+                    <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_toRightOf="@+id/txt_cancel"
+                        android:background="@mipmap/cancel" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_header"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/edt_title"
+                style="@android:style/Widget.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textColorHint="@color/iron"
+                android:textColor="@color/black"
+                android:hint="@string/event_title_edt_hint"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/description_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_title"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/edt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/event_description_txt"
+                style="@android:style/Widget.EditText"
+                android:textColor="@color/black" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/selectDate1_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description_layout"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickSelectDate">
+
+            <ImageView
+                android:id="@+id/img_selectDate1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:background="@mipmap/alarm" />
+
+            <TextView
+                android:id="@+id/txt_showDateTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@+id/img_selectDate1"
+                android:gravity="center_vertical"
+                android:text="@string/event_showDateTime"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/selectDate2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectDate1_layout"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickSelectDate">
+
+            <ImageView
+                android:id="@+id/img_selectDate2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:background="@mipmap/alarm" />
+
+            <TextView
+                android:id="@+id/txt_showDateTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@+id/img_selectDate2"
+                android:gravity="center_vertical"
+                android:text="@string/event_showDateTime"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
