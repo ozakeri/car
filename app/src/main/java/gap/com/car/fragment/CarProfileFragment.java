@@ -289,18 +289,6 @@ public class CarProfileFragment extends Fragment {
                                             System.out.println("line====" + line);
                                             txt_line.setText(line);
                                         }
-
-                                        if (!lineJsonObject.isNull("lineCompanyController")) {
-                                            JSONObject lineCompanyControllerJsonObject = lineJsonObject.getJSONObject("lineCompanyController");
-                                            if (!lineCompanyControllerJsonObject.isNull("company")) {
-                                                JSONObject companyControllerJsonObject = lineCompanyControllerJsonObject.getJSONObject("company");
-                                                if (!companyControllerJsonObject.isNull("nameFv")) {
-                                                    companyController = companyControllerJsonObject.getString("nameFv");
-                                                    System.out.println("companyController====" + companyController);
-                                                    txt_companyController.setText(companyController);
-                                                }
-                                            }
-                                        }
                                     }
 
                                     if (!carUsageJsonObject.isNull("usageType_text")) {
@@ -330,12 +318,12 @@ public class CarProfileFragment extends Fragment {
                                                 System.out.println("between=====" + between);
                                                 if (between > 1) {
                                                     txt_insurance.setVisibility(View.VISIBLE);
-                                                    txt_insurance.setText(" ( " + between + " ماه تا پایان اعتبار " + " ) ");
-                                                    txt_insurance.setTextColor(getResources().getColor(R.color.red));
-                                                } else if (between < 1) {
+                                                    txt_insurance.setText(between + " ماه تا پایان اعتبار " );
+                                                    //txt_insurance.setTextColor(getResources().getColor(R.color.red));
+                                                } else if (between <= 1) {
                                                     txt_insurance.setVisibility(View.VISIBLE);
                                                     String between1 = CalendarUtil.datesDiff(getActivity(), currentDate, expireDate, "d");
-                                                    txt_insurance.setText(" ( " + between1 + " تا پایان اعتبار " + " ) ");
+                                                    txt_insurance.setText(between1 + " تا پایان اعتبار ");
                                                     txt_insurance.setTextColor(getResources().getColor(R.color.red));
                                                 }
 
@@ -373,15 +361,15 @@ public class CarProfileFragment extends Fragment {
 
                                                 System.out.println("========between======" + between);
 
-                                                if (between >= 1) {
+                                                if (between > 1) {
                                                     txt_technicalCheck.setVisibility(View.VISIBLE);
-                                                    txt_technicalCheck.setText(" ( " + between + " ماه تا پایان اعتبار " + " ) ");
-                                                    txt_technicalCheck.setTextColor(getResources().getColor(R.color.red));
-                                                } else if (between < 1) {
+                                                    txt_technicalCheck.setText(between + " ماه تا پایان اعتبار " );
+                                                    //txt_technicalCheck.setTextColor(getResources().getColor(R.color.red));
+                                                } else if (between <= 1) {
 
                                                     txt_technicalCheck.setVisibility(View.VISIBLE);
                                                     String between1 = CalendarUtil.datesDiff(getActivity(), currentDate, expireDate, "d");
-                                                    txt_technicalCheck.setText(" ( " + between1 + " تا پایان اعتبار " + " ) ");
+                                                    txt_technicalCheck.setText(between1 + " تا پایان اعتبار " );
                                                     txt_technicalCheck.setTextColor(getResources().getColor(R.color.red));
                                                 }
 
@@ -391,6 +379,15 @@ public class CarProfileFragment extends Fragment {
                                         }
 
                                     }
+                                }
+
+                                if (!carJsonObject.isNull("carProfitOwner")) {
+                                    JSONObject carProfitOwnerJsonObject = carJsonObject.getJSONObject("carProfitOwner");
+                                    if (!carProfitOwnerJsonObject.isNull("company")) {
+                                        JSONObject companyOwnerJsonObject = carProfitOwnerJsonObject.getJSONObject("company");
+                                        txt_companyController.setText(companyOwnerJsonObject.getString("name"));
+                                    }
+
                                 }
 
 

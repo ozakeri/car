@@ -104,7 +104,7 @@ public class WeekDayFragment extends Fragment {
     private Roozh roozh = new Roozh();
     private PersianDate persianDate;
     private Globals sharedData;
-    private TextView txt_driverStatus,txt_null, showEmptyMessage, txt_halfPathAcpt, txt_timeMinWorkInLine, txt_kmInLineFV, txt_kmAll, txt_countEtPass, txt_priceEtPass, txt_countEtCash, txt_priceEtCash, txt_etCardNo, txt_priceEtSumFV, txt_priceSubDF_2, txt_showEmpty1, txt_showEmpty2;
+    private TextView txt_driverStatus, txt_null, showEmptyMessage, txt_halfPathAcpt, txt_timeMinWorkInLine, txt_kmInLineFV, txt_kmAll, txt_countEtPass, txt_priceEtPass, txt_countEtCash, txt_priceEtCash, txt_etCardNo, txt_priceEtSumFV, txt_priceSubDF_2, txt_showEmpty1, txt_showEmpty2;
     private ImageView img_change1, img_change2, img_change3, img_change4, img_status, img_fab1, img_fab2, img_fab3, img_back, btnListFab;
     private RelativeLayout relativeLayout22, relativeLayout33, disable_layout, disable_right_layout;
     private LinearLayout end_layout, start_layout, bottom_layout, linearLayout3, linearLayout1, linearLayout2;
@@ -241,7 +241,7 @@ public class WeekDayFragment extends Fragment {
          * */
         Date date = new Date();
         roozh.PersianToGregorian(year, month, day);
-        calendar.set(roozh.getYear(), roozh.getMonth(), roozh.getDay());
+        calendar.set(roozh.getYear(), roozh.getMonth(), roozh.getDay() +1);
         calendar.add(Calendar.MONTH, -1);
         Date date12 = calendar.getTime();
 
@@ -370,7 +370,7 @@ public class WeekDayFragment extends Fragment {
         txt_null = dialog_wait.findViewById(R.id.txt_null);
         recycler_view = dialog_wait.findViewById(R.id.recycler_view);
 
-       // getComments();
+        // getComments();
 
         layout_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -423,7 +423,7 @@ public class WeekDayFragment extends Fragment {
                                 public void onResponse(UpdateVersionResponseBean response) {
                                     if (response.getsUCCESS() != null) {
                                         Utils.showToast(getActivity(), R.string.success_comment_sent, false);
-                                       // getComments();
+                                        // getComments();
                                         dialog_wait.dismiss();
                                     } else {
                                         Utils.showToast(getActivity(), R.string.error_unknown, false);
@@ -881,7 +881,7 @@ public class WeekDayFragment extends Fragment {
                                                 main_layout.setVisibility(VISIBLE);
                                                 bottom_layout.setVisibility(VISIBLE);
 
-                                               // carDailyInfoId = response.getCarDailyInfo().getId();
+                                                // carDailyInfoId = response.getCarDailyInfo().getId();
 
                                                 System.out.println("getCarDailyInfo=====" + response.getCarDailyInfo().getHalfPathAcpt());
                                                 if (response.getCarDailyInfo().getHalfPathAcpt() != null) {
@@ -965,7 +965,7 @@ public class WeekDayFragment extends Fragment {
                                                 }
 
                                                 if (response.getCarDailyInfo().getProcessStatus_text() != null) {
-                                                        txt_driverStatus.setText(response.getCarDailyInfo().getProcessStatus_text());
+                                                    txt_driverStatus.setText(response.getCarDailyInfo().getProcessStatus_text());
                                                 }
 
 

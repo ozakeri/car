@@ -1,10 +1,11 @@
 package gap.com.car.activity;
 
 
+import static gap.com.car.R.id.content_frame;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -53,7 +54,6 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import gap.com.car.BuildConfig;
 import gap.com.car.R;
-import gap.com.car.SplashActivity;
 import gap.com.car.adapter.DrawerItemCustomAdapter;
 import gap.com.car.app.CarApplication;
 import gap.com.car.common.Constants;
@@ -84,8 +84,6 @@ import gap.com.car.util.Util;
 import gap.com.car.util.Utils;
 import gap.com.datepicker.DatePicker;
 import gap.com.datepicker.interfaces.DateSetListener;
-
-import static gap.com.car.R.id.content_frame;
 
 //import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -127,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
-        JalaliCalendarUtil jalaliCalendarUtil = new JalaliCalendarUtil(cal);
+        final JalaliCalendarUtil jalaliCalendarUtil = new JalaliCalendarUtil(cal);
         spinner_txt.setText(jalaliCalendarUtil.getIranianDate3());
 
 
@@ -211,8 +209,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Context wrapper = new ContextThemeWrapper(getApplicationContext(), R.style.popupMenuStyle);
                 PopupMenu popup = new PopupMenu(wrapper, calendarIconLayout);
-                popup.getMenu().add(1, R.id.action_today, 1, R.string.action_selectToday);
-                popup.getMenu().add(1, R.id.action_custom, 2, R.string.action_selectCustom);
+                popup.getMenu().add(1, R.id.action_today, 1, "امروز                   ");
+                popup.getMenu().add(1, R.id.action_custom, 2, "برو به                   ");
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     @Override
@@ -227,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
                                 sharedData.setSelectedMenuItem(Constant.ACTION_DAY);
                                 fragmentTransaction(new WeekDayFragment(), "WeekDayFragment");
                                 EventBus.getDefault().post(new EventBusModel("WeekDayFragment"));
+
+                               // spinner_txt.setText(jalaliCalendarUtil.getIranianDate3());
 
                                /* if (sharedData.getSelectedMenuItem() != null) {
                                     if (sharedData.getSelectedMenuItem().equals(Constant.ACTION_DAY)) {
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
                                 //Util.recognizeSelectedItems(Constant.RECOGNIZE, "MonthlyFragment");
                                 Calendar minDate = Calendar.getInstance();
                                 Calendar maxDate = Calendar.getInstance();
-                                minDate.set(Calendar.MONTH, minDate.get(Calendar.MONTH) - 3);
+                                minDate.set(Calendar.MONTH, minDate.get(Calendar.MONTH) - 6);
                                 new DatePicker.Builder()
                                         .id(1)
                                         .minDate(minDate)
@@ -295,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.list_view_item_row, drawerItem);
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ((DrawerLayout) findViewById(R.id.drawer_layout)).addDrawerListener(new DrawerLayout.DrawerListener() {
@@ -302,18 +303,51 @@ public class MainActivity extends AppCompatActivity {
             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
                 // Whatever you want
                 //Toast.makeText(getApplicationContext(),"onDrawerSlide",Toast.LENGTH_LONG).show();
+
+                if (currentPageName.equals("MonthlyFragment")){
+                    mDrawerList.getChildAt(0).setBackgroundColor(getResources().getColor(R.color.lightgray03));
+                }else {
+                    mDrawerList.getChildAt(0).setBackgroundColor(getResources().getColor(R.color.transparent));
+                }
+
+                if (currentPageName.equals("CarProfileFragment")){
+                    mDrawerList.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.lightgray03));
+                }else {
+                    mDrawerList.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.transparent));
+                }
+
+                if (currentPageName.equals("CommentFragment")){
+                    mDrawerList.getChildAt(2).setBackgroundColor(getResources().getColor(R.color.lightgray03));
+                }else {
+                    mDrawerList.getChildAt(2).setBackgroundColor(getResources().getColor(R.color.transparent));
+                }
+
+                if (currentPageName.equals("SettingsFragment")){
+                    mDrawerList.getChildAt(3).setBackgroundColor(getResources().getColor(R.color.lightgray03));
+                }else {
+                    mDrawerList.getChildAt(3).setBackgroundColor(getResources().getColor(R.color.transparent));
+                }
+
+                if (currentPageName.equals("AboutFragment")){
+                    mDrawerList.getChildAt(4).setBackgroundColor(getResources().getColor(R.color.lightgray03));
+                }else {
+                    mDrawerList.getChildAt(4).setBackgroundColor(getResources().getColor(R.color.transparent));
+                }
+
             }
 
             @Override
             public void onDrawerOpened(@NonNull View drawerView) {
                 // Whatever you want
                 menuIcon.setBackgroundResource(R.mipmap.close_menu);
+                System.out.println("======onDrawerOpened======");
             }
 
             @Override
             public void onDrawerClosed(@NonNull View drawerView) {
                 // Whatever you want
                 menuIcon.setBackgroundResource(R.mipmap.menu_icon);
+                System.out.println("======currentPageName======" + currentPageName);
             }
 
             @Override
@@ -687,9 +721,6 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         JalaliCalendarUtil jalaliCalendarUtil = new JalaliCalendarUtil(calendar);
-        Date from_date = calendar.getTime();
-        Date to_date = calendar.getTime();
-        Date date = calendar.getTime();
         sharedData.setYear(jalaliCalendarUtil.getIranianYear());
         sharedData.setMonth(jalaliCalendarUtil.getIranianMonth());
         sharedData.setDay(jalaliCalendarUtil.getIranianDay());

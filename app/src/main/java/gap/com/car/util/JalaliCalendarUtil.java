@@ -732,7 +732,7 @@ public class JalaliCalendarUtil {
      */
     private int IranianDateToJDN() {
         IranianCalendar();
-        return (gregorianDateToJDN(gYear, 3, march) + (irMonth - 1) * 31 - irMonth / 7 * (irMonth - 7) + irDay - 1);
+        return (gregorianDateToJDN(gYear, 3, march) + (irMonth - 1) * 31 - irMonth / 7 * (irMonth - 7) + irDay);
     }
 
     /**

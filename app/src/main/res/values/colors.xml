@@ -9,6 +9,7 @@
     <color name="light_green_transparent">#05B8B0B0</color>
     <color name="colorPrimary_transparent">#74FD1510</color>
     <color name="light_green1">#BCC7E995</color>
+    <color name="transparent">#00000000</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
