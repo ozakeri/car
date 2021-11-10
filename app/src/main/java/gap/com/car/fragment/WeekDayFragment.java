@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -21,6 +22,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -41,10 +43,16 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
 import org.greenrobot.eventbus.EventBus;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
+import org.joda.time.Months;
+import org.joda.time.Years;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -818,6 +826,7 @@ public class WeekDayFragment extends Fragment {
             final String password = driver.getPassword();
             final String fromDate = roozh.getYear() + "-" + roozh.getMonth() + "-" + roozh.getDay();
             System.out.println("fromDate=======" + fromDate);
+            System.out.println("fromDate=======" + persianDate.getGrgYear()+"-"+persianDate.getGrgMonth()+"-"+persianDate.getGrgDay());
             progressbar.setVisibility(VISIBLE);
             img_progress.setVisibility(VISIBLE);
             main_layout.setVisibility(GONE);
@@ -847,6 +856,7 @@ public class WeekDayFragment extends Fragment {
                             card_left.setEnabled(true);
                             ServerCoordinator.getInstance().getCarDailyInfo(username, password, String.valueOf(driver.getCarId()), fromDate,
                                     new Response.Listener<SuccessResponseCarInvoice>() {
+                                        @RequiresApi(api = Build.VERSION_CODES.O)
                                         @SuppressLint("SetTextI18n")
                                         @Override
                                         public void onResponse(SuccessResponseCarInvoice response) {
@@ -866,10 +876,21 @@ public class WeekDayFragment extends Fragment {
                                             }
                                             System.out.println("count======" + count);
 
-                                            /*if (count == 3){
+                                            LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay());
+                                            LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
+
+                                            int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
+                                            int yearsBetween = Years.yearsBetween(jamesBirthDay, now).getYears();
+                                            int dayBetween = Days.daysBetween(jamesBirthDay, now).getDays();
+
+                                            System.out.println("monthsBetween==" + monthsBetween);
+                                            System.out.println("yearsBetween==" + yearsBetween);
+                                            System.out.println("dayBetween==" + dayBetween);
+
+                                            if (monthsBetween == 6){
                                                 card_right.setEnabled(false);
                                                 disable_right_layout.setVisibility(VISIBLE);
-                                            }*/
+                                            }
 
                                             if (response.getCarDailyInfo() != null) {
 
@@ -1450,7 +1471,7 @@ public class WeekDayFragment extends Fragment {
                                                 int balance = response.getrESULT().getTimeSeriesList().get(i).getCount();
                                                 entries.add(new BarEntry(balance, i));
                                                 String out = response.getrESULT().getTimeSeriesList().get(i).getDate();
-                                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss", Locale.getDefault());
+                                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm", Locale.getDefault());
                                                 try {
                                                     Date date = simpleDateFormat.parse(out);
                                                     Calendar calendar = Calendar.getInstance();

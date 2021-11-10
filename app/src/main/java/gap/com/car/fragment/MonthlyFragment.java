@@ -255,18 +255,30 @@ public class MonthlyFragment extends Fragment {
                         strDate = txt_day3;
                     }
 
+                    System.out.println("txt_day1=====" + txt_day1);
+                    System.out.println("txt_day2=====" + txt_day2);
+                    System.out.println("txt_day3=====" + txt_day3);
 
                     if (!strDate.equals("")) {
                         day = Integer.parseInt(strDate);
                         tmpDateConvertor.setGregorianDate(year, month, day);
 
-                        sharedData.setYear(tmpDateConvertor.getGregorianYear());
-                        sharedData.setMonth(tmpDateConvertor.getGregorianMonth());
-                        sharedData.setDay(tmpDateConvertor.getGregorianDay());
+                        sharedData.setYear(year);
+                        sharedData.setMonth(month);
+                        sharedData.setDay(day);
 
                         sharedData.setGridOnClick(Constant.ACTION_GRID_ONCLICK);
                         sharedData.setSelectedMenuItem(Constant.ACTION_DAY);
                         sharedData.setSalaryListItemId(id);
+
+
+                        System.out.println("tmpDateConvertor1=====" + year);
+                        System.out.println("tmpDateConvertor2=====" + month);
+                        System.out.println("tmpDateConvertor3=====" + day);
+
+                        System.out.println("tmpDateConvertor4=====" +year);
+                        System.out.println("tmpDateConvertor4=====" + month);
+                        System.out.println("tmpDateConvertor4=====" + day);
                     }
 
                     fragment = new WeekDayFragment();
@@ -340,13 +352,13 @@ public class MonthlyFragment extends Fragment {
 
 
         ArrayValueAddFunction();
-        txt_p1.append(StringArray.get(0));
+        /*txt_p1.append(StringArray.get(0));
         txt_p2.append(StringArray.get(1));
         txt_p3.append(StringArray.get(2));
         txt_p4.append(StringArray.get(3));
         txt_p5.append(StringArray.get(4));
         txt_p6.append(StringArray.get(5));
-        txt_p7.append(StringArray.get(6));
+        txt_p7.append(StringArray.get(6));*/
 
         tmpDateConvertor = new DateConvertor();
         if (sharedData.getYear() != 0 && sharedData.getMonth() != 0 && sharedData.getDay() != 0) {

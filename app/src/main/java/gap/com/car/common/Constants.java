@@ -16,8 +16,8 @@ public class Constants {
     //public static final String SITE = "http://192.168.43.7:8080";
       //public static final String SITE = "http://192.168.1.4:8080";
     //public static final String SITE = "http://192.168.2.108:8080";
-    public static final String SITE = "http://192.168.2.180:8080";
-    //public static final String SITE = "http://78.38.56.19";
+   // public static final String SITE = "http://192.168.2.180:8080";
+    public static final String SITE = "http://78.38.56.19";
     //public static final String SITE = "http://bis.isfahanptc.ir";
    // public static final String SITE = "http://bis.qazvin.ir";
     public static final String WS = SITE + "/rfServices/";

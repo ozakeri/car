@@ -303,6 +303,38 @@
                             android:layout_height="wrap_content">
 
                             <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_driverCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toLeftOf="@+id/txt_driverCode1"
+                                android:text="--"
+                                android:textSize="15sp" />
+
+                            <gap.com.car.widget.BTextView
+                                android:id="@+id/txt_driverCode1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="کد پرسنلی : "
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <gap.com.car.widget.BTextView
                                 android:id="@+id/txt_liceNo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -320,7 +352,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentRight="true"
-                                android:layout_margin="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:text="شماره گواهینامه : "
                                 android:textSize="15sp"
                                 android:textStyle="bold" />

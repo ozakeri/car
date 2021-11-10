@@ -37,7 +37,7 @@ import static gap.com.car.R.id.content_frame;
 
 public class DriverProfileFragment extends Fragment {
 
-    private TextView txt_driverName, txt_nationalNo, txt_mobileNo, txt_phoneNo, txt_liceNo, txt_expDate, txt_insuranceNo, txt_address, txt_between, txt_postalCode, txt_loginDate;
+    private TextView txt_driverCode,txt_driverName, txt_nationalNo, txt_mobileNo, txt_phoneNo, txt_liceNo, txt_expDate, txt_insuranceNo, txt_address, txt_between, txt_postalCode, txt_loginDate;
     private ImageView img_editProfile;
     private CircleImageView img_driverImage;
     private Globals globals = Globals.getInstance();
@@ -65,6 +65,7 @@ public class DriverProfileFragment extends Fragment {
         txt_loginDate = (TextView) view.findViewById(R.id.txt_loginDate);
         img_driverImage = (CircleImageView) view.findViewById(R.id.img_driverImage);
         img_editProfile = (ImageView) view.findViewById(R.id.img_editProfile);
+        txt_driverCode = (TextView) view.findViewById(R.id.txt_driverCode);
 
         PersianDate persianDate = new PersianDate();
         txt_loginDate.setText(persianDate.dayName() + " " + persianDate.getShYear() + "/" + persianDate.getShMonth() + "/" + persianDate.getShDay() + " ساعت " + persianDate.getHour() + ":" + persianDate.getMinute());
@@ -95,8 +96,14 @@ public class DriverProfileFragment extends Fragment {
 
 
                     if (!resultJsonObject.isNull("driverProfileVO")) {
+                        System.out.println("driverProfileVO====" + resultJsonObject.getString("driverProfileVO"));
 
                         JSONObject driverProfileVOJsonObject = resultJsonObject.getJSONObject("driverProfileVO");
+
+                        if (!driverProfileVOJsonObject.isNull("driverCode")){
+                            txt_driverCode.setText(driverProfileVOJsonObject.getString("driverCode"));
+                        }
+
                         if (!driverProfileVOJsonObject.isNull("person")) {
                             JSONObject personJsonObject = driverProfileVOJsonObject.getJSONObject("person");
                             if (!personJsonObject.isNull("name")) {
@@ -146,7 +153,6 @@ public class DriverProfileFragment extends Fragment {
                                 try {
                                     expireDate = simpleDateFormat.parse(strExpireDate);
                                     Date currentDate = new Date(System.currentTimeMillis());
-                                    //String expireDateStr = CalendarUtil.datesDiff(getActivity(), currentDate, expireDate, "yMd");
                                     String expireDateStr = CalendarUtil.convertPersianDateTime(expireDate, "yyyy/MM/dd");
                                     System.out.println("expireDateStr========" + expireDateStr);
                                     int between = CalendarUtil.monthsBetween(currentDate, expireDate);
@@ -162,103 +168,12 @@ public class DriverProfileFragment extends Fragment {
                             }
                         }
 
-                            if (!driverProfileVOJsonObject.isNull("drivingLicence")) {
-                                JSONObject drivingLicenceJsonObject = driverProfileVOJsonObject.getJSONObject("drivingLicence");
-                                /*if (!drivingLicenceJsonObject.isNull("expireDate")) {
-                                    String strExpireDate = drivingLicenceJsonObject.getString("expireDate");
-                                    System.out.println("strExpireDate========" + strExpireDate);
-                                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                                    Date expireDate = null;
-                                    try {
-                                        expireDate = simpleDateFormat.parse(strExpireDate);
-                                        Date currentDate = new Date(System.currentTimeMillis());
-                                        //String expireDateStr = CalendarUtil.datesDiff(getActivity(), currentDate, expireDate, "yMd");
-                                        String expireDateStr = CalendarUtil.convertPersianDateTime(expireDate, "yyyy/MM/dd");
-                                        System.out.println("expireDateStr========" + expireDateStr);
-                                        int between = CalendarUtil.monthsBetween(currentDate, expireDate);
-
-                                        txt_expDate.setText(expireDateStr);
-                                        if (between <= 2) {
-                                            txt_between.setText(" ( " + between + " ماه تا پایان اعتبار " + " ) ");
-                                        }
-
-                                    } catch (ParseException e) {
-                                        e.printStackTrace();
-                                    }
-                                }*/
-
-                            }
-
-                           // String strExpireDate = response.getRESULT().getDriverProfile().getDrivingLicence().getExpireDate();
-
-        /*                List<Integer> myArray = response.getRESULT().getDriverProfile().getPerson().getPictureBytes();
-                        txt_driverName.setText(response.getRESULT().getDriverProfile().getPerson().getName() + " " + response.getRESULT().getDriverProfile().getPerson().getFamily());
-                        txt_nationalNo.setText(response.getRESULT().getDriverProfile().getPerson().getNationalCode());
-                        txt_mobileNo.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getMobileNo());
-                        txt_phoneNo.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getTelNo());
-                        txt_liceNo.setText(response.getRESULT().getDriverProfile().getDrivingLicence().getLicenceNo());
-                        txt_insuranceNo.setText(response.getRESULT().getDriverProfile().getPerson().getInsuranceNo());
-                        txt_address.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getAddress());
-                        txt_postalCode.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getPostalCode());
-                        String strExpireDate = response.getRESULT().getDriverProfile().getDrivingLicence().getExpireDate();*/
                     }
                 }
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
-  /*      DriverProfileResponseBean response = globals.getResponse();
-        System.out.println("ProfileFragment=====" + response);
-        if (response != null) {
-
-            List<Integer> myArray = response.getRESULT().getDriverProfile().getPerson().getPictureBytes();
-            if (myArray != null) {
-                JSONArray jsArray = new JSONArray();
-                for (int i = 0; i < myArray.size(); i++) {
-                    jsArray.put(myArray.get(i));
-                }
-                byte[] bytes = new byte[jsArray.length()];
-                for (int i = 0; i < jsArray.length(); i++) {
-                    try {
-                        bytes[i] = Integer.valueOf(jsArray.getInt(i)).byteValue();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                img_driverImage.setImageBitmap(bitmap);
-            }
-
-
-            txt_driverName.setText(response.getRESULT().getDriverProfile().getPerson().getName() + " " + response.getRESULT().getDriverProfile().getPerson().getFamily());
-            txt_nationalNo.setText(response.getRESULT().getDriverProfile().getPerson().getNationalCode());
-            txt_mobileNo.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getMobileNo());
-            txt_phoneNo.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getTelNo());
-            txt_liceNo.setText(response.getRESULT().getDriverProfile().getDrivingLicence().getLicenceNo());
-            txt_insuranceNo.setText(response.getRESULT().getDriverProfile().getPerson().getInsuranceNo());
-            txt_address.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getAddress());
-            txt_postalCode.setText(response.getRESULT().getDriverProfile().getPerson().getAddress().getPostalCode());
-            String strExpireDate = response.getRESULT().getDriverProfile().getDrivingLicence().getExpireDate();
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            Date expireDate = null;
-            try {
-                expireDate = simpleDateFormat.parse(strExpireDate);
-                Date currentDate = new Date(System.currentTimeMillis());
-                //String expireDateStr = CalendarUtil.datesDiff(getActivity(), currentDate, expireDate, "yMd");
-                String expireDateStr = CalendarUtil.convertPersianDateTime(expireDate, "yyyy/MM/dd");
-                int between = CalendarUtil.monthsBetween(currentDate, expireDate);
-
-                txt_expDate.setText(expireDateStr);
-                if (between <= 2) {
-                    txt_between.setText(" ( " + between + " ماه تا پایان اعتبار " + " ) ");
-                }
-
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }*/
 
 
         img_editProfile.setOnClickListener(new View.OnClickListener() {
