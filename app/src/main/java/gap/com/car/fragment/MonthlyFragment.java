@@ -242,7 +242,10 @@ public class MonthlyFragment extends Fragment {
 
                 // TODO Auto-generated method stub
                 String id = (String) ((TextView) view.findViewById(R.id.id)).getText();
-                if (!id.trim().isEmpty()) {
+                String date = (String) ((TextView) view.findViewById(R.id.date)).getText();
+                System.out.println("======date=========" + date);
+
+                if (!date.trim().isEmpty()) {
                     String txt_day1 = ((TextView) view.findViewById(R.id.calendar_day_gridcell)).getText().toString();
                     String txt_day2 = ((TextView) view.findViewById(R.id.calendar_day_gridcell_1)).getText().toString();
                     String txt_day3 = ((TextView) view.findViewById(R.id.calendar_day_gridcell_2)).getText().toString();

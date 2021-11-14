@@ -224,8 +224,6 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
 
             if (Integer.parseInt(monthNumber) == persianDate.getShMonth() || shareData.isCurrentDate()) {
-                System.out.println("===-=-=-=-=-====" + theday);
-                System.out.println("===-=-=-=-=-====" + shareData.getCurrentDay());
                 if (shareData.getCurrentDay() == 0) {
                     shareData.setCurrentDay(Integer.parseInt(theday));
                 }
@@ -251,6 +249,15 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
+            for (int i = 0; i <= persianDate.getShDay(); i++) {
+
+                if (Integer.parseInt(theday) == i){
+                    holder.date.setText(String.valueOf(i));
+                    holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
+                    System.out.println("=-theday=-=--=-==" + theday);
+                    System.out.println("=-i=-=--=-==" + i);
+                }
+            }
 
             if (arrayList != null) {
                 for (CarDailyInfoList carDailyInfoList : arrayList) {
@@ -262,7 +269,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
 
                             if (date1.compareTo(date2) == 0) {
                                 holder.id.setText(String.valueOf(carDailyInfoList.getId()));
-                                holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
+
 
                                 if (carDailyInfoList.getCalender() != null) {
                                     if (carDailyInfoList.getCalender().getHolidayIs() == 1) {
@@ -338,7 +345,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
      * */
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView gridCell, calendar_day_gridcell_1, calendar_day_gridcell_2, calendar_description, id;
+        TextView gridCell, calendar_day_gridcell_1, calendar_day_gridcell_2, calendar_description, id,date;
         RelativeLayout relativeLayout, layout_top;
         ImageView statusIcon, shiftIcon;
 
@@ -349,6 +356,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
             calendar_day_gridcell_2 = (TextView) convertView.findViewById(R.id.calendar_day_gridcell_2);
             calendar_description = (TextView) convertView.findViewById(R.id.calendar_description);
             id = (TextView) convertView.findViewById(R.id.id);
+            date = (TextView) convertView.findViewById(R.id.date);
             relativeLayout = (RelativeLayout) convertView.findViewById(R.id.relativeLayout);
             layout_top = (RelativeLayout) convertView.findViewById(R.id.layout_top);
             statusIcon = (ImageView) convertView.findViewById(R.id.statusIcon);
