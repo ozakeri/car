@@ -13,6 +13,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.joda.time.LocalDate;
+import org.joda.time.Months;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -231,6 +234,9 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
                     holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.colorPrimaryDark));
                     holder.gridCell.setTextSize(20);
                     holder.layout_top.setBackgroundResource(R.drawable.border_current_edittext);
+                }else if (holder.day.getText().equals(theday)){
+                    System.out.println("=-===-==-=----------" + holder.day.getText());
+                    System.out.println("=-===-==-=----------" +theday);
                 }
 
             } else {
@@ -247,17 +253,37 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
             Roozh roozh = new Roozh();
             roozh.PersianToGregorian(Integer.parseInt(theyear), Integer.parseInt(monthNumber), Integer.parseInt(theday));
 
+            holder.year.setText(theyear);
+            holder.month.setText(monthNumber);
+            holder.day.setText(theday);
+
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
-            for (int i = 0; i <= persianDate.getShDay(); i++) {
 
-                if (Integer.parseInt(theday) == i){
-                    holder.date.setText(String.valueOf(i));
-                    holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
-                    System.out.println("=-theday=-=--=-==" + theday);
-                    System.out.println("=-i=-=--=-==" + i);
+            if (Integer.parseInt(monthNumber) == persianDate.getShMonth()) {
+                for (int i = 0; i <= persianDate.getShDay(); i++) {
+
+                    if (Integer.parseInt(theday) == i) {
+                        holder.date.setText(String.valueOf(i));
+                        holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
+      /*                  System.out.println("=-theday=-=--=-==" + theday);
+                        System.out.println("=-themonth=-=--=-==" + monthNumber);
+                        System.out.println("=-getShMonth=-=--=-==" + persianDate.getShMonth());
+                        System.out.println("=-Integer=-=--=-==" + (Integer.parseInt(monthNumber) + persianDate.getShMonth()));*/
+                    }
                 }
+            } else {
+
+                LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay());
+                LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
+                int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
+                holder.date.setText(String.valueOf(1));
+                holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
+
+                System.out.println("======date=========" + theyear+"-"+monthNumber+"-"+theday);
+                System.out.println("monthsBetween=====" + monthsBetween);
             }
+
 
             if (arrayList != null) {
                 for (CarDailyInfoList carDailyInfoList : arrayList) {
@@ -270,6 +296,8 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
                             if (date1.compareTo(date2) == 0) {
                                 holder.id.setText(String.valueOf(carDailyInfoList.getId()));
 
+                                // holder.date.setText(String.valueOf(carDailyInfoList.getId()));
+                                //holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
 
                                 if (carDailyInfoList.getCalender() != null) {
                                     if (carDailyInfoList.getCalender().getHolidayIs() == 1) {
@@ -277,7 +305,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
                                         holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.orrange));
                                     }
                                 }
-                                if (carDailyInfoList.isActiveIs()){
+                                if (carDailyInfoList.isActiveIs()) {
                                     holder.gridCell.setBackgroundResource(R.drawable.white_circle_drawable);
                                     //holder.gridCell.setTextColor(_context.getResources().getColor(R.color.black));
                                     if (carDailyInfoList.getProcessStatus() != null) {
@@ -345,7 +373,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
      * */
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView gridCell, calendar_day_gridcell_1, calendar_day_gridcell_2, calendar_description, id,date;
+        TextView gridCell, calendar_day_gridcell_1, calendar_day_gridcell_2, calendar_description, id, date,year,month,day;
         RelativeLayout relativeLayout, layout_top;
         ImageView statusIcon, shiftIcon;
 
@@ -357,6 +385,9 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
             calendar_description = (TextView) convertView.findViewById(R.id.calendar_description);
             id = (TextView) convertView.findViewById(R.id.id);
             date = (TextView) convertView.findViewById(R.id.date);
+            year = (TextView) convertView.findViewById(R.id.year);
+            month = (TextView) convertView.findViewById(R.id.month);
+            day = (TextView) convertView.findViewById(R.id.day);
             relativeLayout = (RelativeLayout) convertView.findViewById(R.id.relativeLayout);
             layout_top = (RelativeLayout) convertView.findViewById(R.id.layout_top);
             statusIcon = (ImageView) convertView.findViewById(R.id.statusIcon);

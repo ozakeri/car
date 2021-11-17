@@ -809,6 +809,7 @@ public class WeekDayFragment extends Fragment {
     private void isDeviceDateTimeValid(final int year, final int month, final int day) {
         final Roozh roozh = new Roozh();
         roozh.PersianToGregorian(year, month, day);
+        System.out.println("======date=========" + year+"-"+month+"-"+day);
 
         // System.out.println("response=====" + response);
         /*int maxLogSize = 100000;
@@ -875,17 +876,14 @@ public class WeekDayFragment extends Fragment {
                                                 count++;
                                             }
                                             System.out.println("count======" + count);
-
+                                            sharedData.setCurrentDay(day);
                                             LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay());
                                             LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
 
                                             int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
                                             int yearsBetween = Years.yearsBetween(jamesBirthDay, now).getYears();
                                             int dayBetween = Days.daysBetween(jamesBirthDay, now).getDays();
-
-                                            System.out.println("monthsBetween==" + monthsBetween);
-                                            System.out.println("yearsBetween==" + yearsBetween);
-                                            System.out.println("dayBetween==" + dayBetween);
+                                            System.out.println("======monthsBetween=========" + monthsBetween);
 
                                             if (monthsBetween == 6){
                                                 card_right.setEnabled(false);

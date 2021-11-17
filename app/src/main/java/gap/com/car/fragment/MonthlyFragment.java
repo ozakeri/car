@@ -4,7 +4,6 @@ import static android.view.View.GONE;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,20 +29,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
-import com.github.mikephil.charting.animation.ChartAnimator;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider;
-import com.github.mikephil.charting.renderer.BarChartRenderer;
-import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import org.greenrobot.eventbus.EventBus;
+import org.joda.time.LocalDate;
+import org.joda.time.Months;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -60,6 +56,7 @@ import gap.com.car.database.entity.Driver;
 import gap.com.car.gapcalendar.adapter.CalendarAdapter;
 import gap.com.car.gapcalendar.customweekview.DateConvertor;
 import gap.com.car.gapcalendar.customweekview.PersianDate;
+import gap.com.car.gapcalendar.customweekview.Roozh;
 import gap.com.car.model.DriverProfileResponseBean;
 import gap.com.car.model.EventBusModel;
 import gap.com.car.model.ServerDateTimeResponseBean;
@@ -243,9 +240,24 @@ public class MonthlyFragment extends Fragment {
                 // TODO Auto-generated method stub
                 String id = (String) ((TextView) view.findViewById(R.id.id)).getText();
                 String date = (String) ((TextView) view.findViewById(R.id.date)).getText();
-                System.out.println("======date=========" + date);
 
-                if (!date.trim().isEmpty()) {
+
+                String adapterYear = (String) ((TextView) view.findViewById(R.id.year)).getText();
+                String adapterMonth = (String) ((TextView) view.findViewById(R.id.month)).getText();
+                String adapterDay = (String) ((TextView) view.findViewById(R.id.day)).getText();
+
+
+                final Roozh roozh = new Roozh();
+                roozh.PersianToGregorian(Integer.parseInt(adapterYear), Integer.parseInt(adapterMonth), Integer.parseInt(adapterDay));
+                LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay());
+                LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
+                int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
+
+                System.out.println("======date=========" + adapterYear + "-" + adapterMonth + "-" + adapterDay);
+                System.out.println("======monthsBetween=========" + monthsBetween);
+
+
+                if (!date.trim().isEmpty() && monthsBetween < 6) {
                     String txt_day1 = ((TextView) view.findViewById(R.id.calendar_day_gridcell)).getText().toString();
                     String txt_day2 = ((TextView) view.findViewById(R.id.calendar_day_gridcell_1)).getText().toString();
                     String txt_day3 = ((TextView) view.findViewById(R.id.calendar_day_gridcell_2)).getText().toString();
@@ -279,7 +291,7 @@ public class MonthlyFragment extends Fragment {
                         System.out.println("tmpDateConvertor2=====" + month);
                         System.out.println("tmpDateConvertor3=====" + day);
 
-                        System.out.println("tmpDateConvertor4=====" +year);
+                        System.out.println("tmpDateConvertor4=====" + year);
                         System.out.println("tmpDateConvertor4=====" + month);
                         System.out.println("tmpDateConvertor4=====" + day);
                     }
