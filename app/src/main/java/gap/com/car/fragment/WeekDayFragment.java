@@ -881,8 +881,6 @@ public class WeekDayFragment extends Fragment {
                                             LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
 
                                             int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
-                                            int yearsBetween = Years.yearsBetween(jamesBirthDay, now).getYears();
-                                            int dayBetween = Days.daysBetween(jamesBirthDay, now).getDays();
                                             System.out.println("======monthsBetween=========" + monthsBetween);
 
                                             if (monthsBetween == 6){

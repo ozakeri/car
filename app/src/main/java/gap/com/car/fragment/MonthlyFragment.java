@@ -249,7 +249,7 @@ public class MonthlyFragment extends Fragment {
 
                 final Roozh roozh = new Roozh();
                 roozh.PersianToGregorian(Integer.parseInt(adapterYear), Integer.parseInt(adapterMonth), Integer.parseInt(adapterDay));
-                LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay());
+                LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay()+1);
                 LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
                 int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
 

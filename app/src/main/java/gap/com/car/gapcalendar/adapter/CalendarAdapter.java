@@ -266,22 +266,11 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
                     if (Integer.parseInt(theday) == i) {
                         holder.date.setText(String.valueOf(i));
                         holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
-      /*                  System.out.println("=-theday=-=--=-==" + theday);
-                        System.out.println("=-themonth=-=--=-==" + monthNumber);
-                        System.out.println("=-getShMonth=-=--=-==" + persianDate.getShMonth());
-                        System.out.println("=-Integer=-=--=-==" + (Integer.parseInt(monthNumber) + persianDate.getShMonth()));*/
                     }
                 }
             } else {
-
-                LocalDate jamesBirthDay = new LocalDate(roozh.getYear(), roozh.getMonth(), roozh.getDay());
-                LocalDate now = new LocalDate(persianDate.getGrgYear(), persianDate.getGrgMonth(), persianDate.getGrgDay());
-                int monthsBetween = Months.monthsBetween(jamesBirthDay, now).getMonths();
                 holder.date.setText(String.valueOf(1));
                 holder.gridCell.setTextColor(this._context.getResources().getColor(R.color.oil));
-
-                System.out.println("======date=========" + theyear+"-"+monthNumber+"-"+theday);
-                System.out.println("monthsBetween=====" + monthsBetween);
             }
 
 
